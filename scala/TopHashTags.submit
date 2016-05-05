@@ -1,0 +1,13 @@
+//--To Execute on Spark/Scala Shell
+TopHashTags.main(Array())
+TopHashTags.main(Array("/user/poc/flume/tweets/2016/03/04/20/FlumeData.1457139599459","10"))
+
+
+//--For Spark Submit
+spark-submit --class TopHashTags \
+--master yarn-client        \
+--driver-memory 500m        \
+--num-executors 4           \
+--executor-memory 1g        \
+--executor-cores 1          \
+/home/poc/TopHashTags/target/scala-2.10/tophashtags_2.10-1.0.jar
